@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Especialidades{% endblock %}
+
+{% block about_title %}Verifica si tenemos la especialidad que buscas:{% endblock %}
+
+{% block about_content %}
+
+<form class="lead" action="" method="POST">
+    {% csrf_token %}
+    <table>
+        {{ elFormulario.as_table }}
+    </table>
+    <input type="submit" value="Buscar">
+</form>
+
+{% if especialidades %}
+    <h2>Resultados de la búsqueda:</h2>
+    <ul>
+        {% for especialidad in especialidades %}
+            <li>{{ especialidad.especialidad }}</li>
+        {% endfor %}
+    </ul>
+{% elif especialidades is not none %}
+    <p>No se encontraron especialidades.</p>
+{% endif %}
+
+{% endblock %}
+
+{% block about_content2 %}{% endblock %}
+
+{% block service %}{% endblock %}
+
+{% block contact %}{% endblock %}

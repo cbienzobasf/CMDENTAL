@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Sucursales{% endblock %}
+
+{% block about_title %}Nuestras Sucursales{% endblock %}
+
+{% block about_content %}Contamos con varias sucursales convenientemente ubicadas en Santiago y alrededores. Cada una está equipada con modernas instalaciones y un ambiente acogedor, asegurando que todos nuestros pacientes reciban atención de primera clase cerca de su hogar o lugar de trabajo.{% endblock %}
+
+{% block about_content2 %}
+
+<ul>
+    {% for sucursal in sucursales %}
+    <li class="lead">
+        <b>{{ sucursal.clinica }}</b><br>
+        <b>Dirección:</b> {{ sucursal.direccion }}<br>
+        <b>Teléfono:</b> {{ sucursal.telefono }}<br>
+        <b>Horario de Atención:</b> {{ sucursal.horario }}
+    </li>
+    <br>
+    {% endfor %}
+</ul>
+
+{% endblock %}
+
+
+{% block service_title %}¿No te sirve ninguna de nuestras Sucursales? {% endblock %}
+{% block service_content %}<p class="lead">En nuestro compromiso por asegurar que todos nuestros clientes reciban la atención que necesitan, ofrecemos la posibilidad de ser atendidos en algunas sucursales externas que tienen convenio con nuestra clínica. Estas sucursales han sido cuidadosamente seleccionadas para garantizar que cumplen con nuestros altos estándares de calidad y servicio. De esta manera, nos aseguramos de que nunca te quedes sin la atención necesaria. Si te interesa explorar las opciones disponibles en tu comuna, incluyendo aquellas sucursales que no son parte de la Red CMDental pero tienen convenio con nosotros, haz clic en el botón de abajo para comenzar tu búsqueda.</p>
+<a class="btn btn-lg btn-light" href="/sucursales/buscar/">Buscar Sucursales</a>
+{% endblock %}
+
+{% block contact_title %}Formulario Sucursales{% endblock %}
+
+{% block contact_content %}
+<a class="btn btn-lg btn-light" href="/sucursales/agregar/">Agregar Sucursal</a>
+{% endblock %}

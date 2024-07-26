@@ -1,0 +1,30 @@
+{% extends 'base.html' %} <!-- Herencia de archivo base.html -->
+
+{% block title %}Dentistas{% endblock %} <!-- Herencia modificada -->
+{% block about %}{% endblock %} <!-- Bloque completamente removido -->
+
+{% block service_title %}Busca tu Dentista{% endblock %} <!-- Herencia modificada -->
+
+{% block service_content %} <!-- Herencia modificada para incluir barra de busqueda-->
+<form  action="" method="POST"> <!-- Formulario HTML que envia datos usando el metodo POST-->
+    {% csrf_token %} <!-- token de seguridad-->
+    <table>
+        {{ miFormulario.as_table }} <!-- renderizacion de contenido del formulario en formato de tabla para que se vea ordenado-->
+    </table>
+    <input type="submit" value="Buscar"> <!-- boton de submit para buscar datos-->
+
+</form>
+{% if dentistas %} <!-- Verifica si hay registros de dentistas-->
+<h2>Resultados de la búsqueda:</h2>
+<ul>
+    {% for dentista in dentistas %}<!-- ciclo for para entrega de resultados en formato bullet-->
+        <li>{{ dentista.nombre }} - {{ dentista.especialidad }} - {{ dentista.formacion }}</li>
+    {% endfor %}
+</ul>
+{% elif dentistas is not none %} <!-- escenario y respuesta ante no registros disponibles-->
+<p>No se encontraron dentistas.</p>
+{% endif %}
+
+{% endblock %}
+
+{% block contact %}{% endblock %}<!-- Bloque completamente removido -->

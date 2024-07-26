@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}Especialidades{% endblock %}
+
+{% block about_title %}Nuestras Especialidades{% endblock %}
+
+{% block about_content %}Ofrecemos una amplia gama de especialidades dentales para cubrir todas tus necesidades. Nuestros dentistas de planta están especializados en áreas clave como ortodoncia, endodoncia, implantología y periodoncia. Utilizamos tecnología de punta para proporcionar tratamientos efectivos y de calidad, asegurando que cada paciente reciba la mejor atención posible en estas especialidades.
+{% endblock %}
+
+{% block about_content2 %}
+<p class="lead">A continuación una lista de nuestras espcialidades disponibles:</p>
+<ul>
+    <table>
+        <thead>
+            <tr>
+                <th>Especialidades</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for especialidad in especialidades %}
+                <tr>
+                    <td>{{ especialidad.especialidad }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</ul>
+{% endblock %}
+
+{% block service_title %} ¿No encuentras la especialidad que buscas?{% endblock %}
+
+{% block service_content %}
+<p class="lead">Para encontrar la especialidad que necesitas, te invitamos a utilizar nuestra barra de búsqueda. Si no encuentras la especialidad entre nuestros dentistas de planta, es posible que uno de nuestros dentistas externos, que colaboran con nosotros para ofrecer una gama más amplia de servicios, pueda satisfacer tu necesidad específica. Simplemente ingresa la especialidad que buscas y descubre todas las opciones disponibles.</p>
+<a class="btn btn-lg btn-light" href="/especialidades/buscar/">Buscar Especialidades</a>
+{% endblock %}
+
+{% block contact_title %}Formulario Especialidades{% endblock %}
+
+{% block contact_content %}
+<a class="btn btn-lg btn-light" href="/especialidades/agregar/">Agregar Especialidad</a>
+{% endblock %}

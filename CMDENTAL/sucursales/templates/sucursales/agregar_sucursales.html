@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Sucursales{% endblock %}
+
+{% block about_title %}Buscar Clinicas Adjuntas{% endblock %}
+
+{% block about_content %}
+
+<h1>Agregar Sucursales</h1>
+
+{% if messages %}
+    {% for message in messages %}
+        <p><b>{{ message }}</b></p>
+    {% endfor %}
+{% endif %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ on_formulario.as_p }}
+    <input type="submit" value="Agregar">
+</form>
+
+{% endblock %}
+
+{% block about_content2 %}{% endblock %}
+
+
+{% block service %}{% endblock %}
+
+{% block contact %}{% endblock %}

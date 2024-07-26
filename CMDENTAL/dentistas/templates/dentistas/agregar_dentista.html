@@ -1,0 +1,28 @@
+{% extends 'base.html' %} <!-- Herencia de archivo base.html -->
+
+
+{% block title %}Dentistas{% endblock %} <!-- Herencia modificada -->
+
+{% block about %}{% endblock %} <!-- Bloque completamente removido -->
+{% block service %}{% endblock %} <!-- Bloque completamente removido -->
+
+
+{% block contact_title %}Formulario de Dentista{% endblock %} <!-- Herencia modificada -->
+
+{% block contact_content %}<!-- Herencia modificada para incluir formulario-->
+
+{% if messages %} <!-- Verifica si hay mensajes de exito y los va mostrando dentro del ciclo for segun corresponda, de acuerdo con messages.success definido en la view add_dentista-->
+    {% for message in messages %}
+        <p><b>{{ message }}</b></p>
+    {% endfor %}
+{% endif %}
+
+<form action="" method="POST"><!-- Formulario HTML que envia datos usando el metodo POST --> 
+    {% csrf_token %} <!-- token de seguridad-->
+    {{ mi_formulario.as_p }} <!-- renderizacion de contenido del formulario en formato de parrafo para que se vea ordenado-->
+    <input type="submit" value="Agregar"> <!-- boton de submit para agregar datos-->
+</form>
+    
+{% endblock %}
+
+

@@ -1,0 +1,45 @@
+{% extends 'base.html' %} <!-- Herencia de archivo base.html -->
+
+{% block title %}Dentistas{% endblock %}<!-- Herencia modificada -->
+
+{% block about_title %}Nuestros Dentistas{% endblock %} <!-- Herencia modificada -->
+{% block about_content %}Nuestro equipo de dentistas está compuesto por profesionales altamente capacitados con vasta experiencia en odontología. Cada uno se especializa en áreas específicas, como ortodoncia y cirugía oral, para ofrecer una atención dental personalizada y de la más alta calidad. Además de nuestros dentistas de planta, que se presentan a continuación, colaboramos con dentistas externos para brindar una gama más amplia de servicios. Este enfoque permite a nuestros pacientes acceder a especialistas clave para sus tratamientos, siempre con el respaldo y la coordinación de nuestra clínica.{% endblock %}<!-- Herencia modificada -->
+{% block about_content2 %}<!-- Herencia modificada  para visualización de Tabla dentistas de PLANTA-->
+{% if dentistas_planta %} <!-- Verifica si hay registros en dentistas_planta -->
+    <table>
+        <thead>
+            <tr><!--Prueba de formato html para presentar datos como tabla con encabezados estaticos-->
+                <th>Nombre</th>
+                <th>Especialidad</th>
+                <th>Formación</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dentista in dentistas_planta %} <!--Ciclo for para ir presentando cada registro de dentista en dentistas_planta presentando el nombre, especialidad y formación, emulando el formato de una tabla-->
+                <tr>
+                    <td>{{ dentista.nombre }}</td>
+                    <td>{{ dentista.especialidad }}</td>
+                    <td>{{ dentista.formacion }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>No se encontraron dentistas de planta.</p> <!-- Respuesta ante la no presencia de registros -->
+{% endif %}
+
+{% endblock %}
+
+{% block service_title %}Busca tu Dentista{% endblock %} <!-- Herencia modificada -->
+
+{% block service_content %} <!-- Herencia modificada con pequeños ajustes de estetica -->
+<p class="lead">Sabemos lo importante que es para ti contar con un dentista de confianza. Por eso, te invitamos a utilizar nuestra barra de búsqueda para verificar si tu dentista de cabecera forma parte de nuestro equipo de profesionales. Simplemente ingresa su nombre en la barra de búsqueda y descubre si puedes continuar recibiendo la misma atención de calidad que siempre has tenido, ahora con el respaldo de nuestro centro dental.</p>
+<a class="btn btn-lg btn-light" href="/dentistas/buscar/">Buscar Dentistas</a><!--Boton de redireccion a pagina BUSCAR DENTISTAS -->
+
+{% endblock %}
+
+{% block contact_title %}Formulario de Dentista{% endblock %} <!-- Herencia modificada -->
+
+{% block contact_content %}
+<a class="btn btn-lg btn-light" href="/dentistas/agregar/">Agregar Dentista</a> <!--Boton de redireccion a pagina AGREGAR DENTISTAS -->
+{% endblock %}

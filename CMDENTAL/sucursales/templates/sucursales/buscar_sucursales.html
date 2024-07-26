@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Sucursales{% endblock %}
+
+{% block about_title %}Buscar Clinicas Adjuntas{% endblock %}
+
+{% block about_content %}
+
+<form class="lead"  action="" method="POST">
+    {% csrf_token %}
+    <table>
+        {{ inFormulario.as_table }}
+    </table>
+    <input type="submit" value="Buscar">
+
+</form>
+{% if sucursales %}
+<h2>Resultados de la búsqueda:</h2>
+<ul>
+    {% for sucursal in sucursales %}
+    <li>{{ sucursal.clinica }}</li>
+    {% endfor %}
+</ul>
+{% elif sucursales is not none %}
+<p>No se encontraron sucursales.</p>
+{% endif %}
+
+{% endblock %}
+
+{% block about_content2 %}{% endblock %}
+
+
+{% block service %}{% endblock %}
+
+{% block contact %}{% endblock %}

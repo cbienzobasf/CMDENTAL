@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Especialidades{% endblock %}
+
+{% block about_title %}{% endblock %}
+
+{% block about_content %}
+<h1>Agregar Especialidad</h1>
+
+{% if messages %}
+    {% for message in messages %}
+        <p><b>{{ message }}</b></p>
+    {% endfor %}
+{% endif %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ la_formulario.as_table }}
+    <input type="submit" value="Agregar">
+</form>
+
+{% endblock %}
+
+{% block about_content2 %}{% endblock %}
+
+{% block service %}{% endblock %}
+
+{% block contact %}{% endblock %}
