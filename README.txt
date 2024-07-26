@@ -44,9 +44,9 @@ Casos de Prueba y Funcionalidades: (Basados en Criterios 3era Entrega Clase 21 -
   Nota: Cada uno de estos bloqueos se apertura a nivel de title y content según necesidad.
 
   1.3 Ingresar a la Carpeta:
-  CMDENTAL ==> dentistas ==> templates ==> dentistas ==> nuestros_dentistas.html y validar utilización de herencias.
-  CMDENTAL ==> especialidades ==> templates ==> especialidades ==> especialidades.html y validar utilización de herencias.
-  CMDENTAL ==> sucursales ==> templates ==> sucursales ==> sucursales.html y validar utilización de herencias.
+  CMDENTAL ==> CMDENTAL ==> dentistas ==> templates ==> dentistas ==> nuestros_dentistas.html y validar utilización de herencias.
+  CMDENTAL ==> CMDENTAL ==> especialidades ==> templates ==> especialidades ==> especialidades.html y validar utilización de herencias.
+  CMDENTAL ==> CMDENTAL ==> sucursales ==> templates ==> sucursales ==> sucursales.html y validar utilización de herencias.
 
   Nota: Estos 3 casos son ejemplos de la utilización efectiva de Herencia, pero esta misma esta aplicada en la totalidad de los templates del proyecto.
 
@@ -55,9 +55,9 @@ Casos de Prueba y Funcionalidades: (Basados en Criterios 3era Entrega Clase 21 -
 2. Por lo menos 3 Clases en Models:
 
  2.1 Ingresar a la Carpeta: 
-  CMDENTAL ==> dentistas ==> models.py y verifica que este creada la clase "Dentista".
-  CMDENTAL ==> especialidades ==> models.py y verifica que este creada la clase "Especialidad".
-  CMDENTAL ==> sucursales ==> models.py y verifica que este creada la clase "Sucursal".
+  CMDENTAL ==> CMDENTAL ==> dentistas ==> models.py y verifica que este creada la clase "Dentista".
+  CMDENTAL ==> CMDENTAL ==> especialidades ==> models.py y verifica que este creada la clase "Especialidad".
+  CMDENTAL ==> CMDENTAL ==> sucursales ==> models.py y verifica que este creada la clase "Sucursal".
 
 
 
